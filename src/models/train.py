@@ -1,9 +1,9 @@
 import joblib
 import yaml
-from sklearn.ensemble import RandomForestClassifier
 from src.data.dataset import load_data, split_data
 from src.features.build_features import preprocess
 from src.evaluation.metrics import evaluate
+from src.models.model_factory import create_model
 
 def train(config_path: str = "configs/default.yaml"):
     # Load config
@@ -18,7 +18,7 @@ def train(config_path: str = "configs/default.yaml"):
     )
 
     # Init model
-    model = RandomForestClassifier(**config["model"]["params"])
+    model = create_model(config["model"])
     model.fit(X_train, y_train)
 
     # Evaluate
