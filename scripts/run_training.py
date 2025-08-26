@@ -25,7 +25,7 @@ def main():
     
     # Map model names to config files
     model_configs = {
-        "random_forest": "configs/default.yaml",
+        "random_forest": "configs/random_forest.yaml",
         "gradient_boosting": "configs/gradient_boosting.yaml", 
         "svm": "configs/svm.yaml",
         "logistic_regression": "configs/logistic_regression.yaml",
